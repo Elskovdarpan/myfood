@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/dimensions.dart';
+
 class BigText extends StatelessWidget {
 
   Color? color;
@@ -15,7 +17,7 @@ class BigText extends StatelessWidget {
       text,
       maxLines: 1,
       overflow: overFlow,
-      style: TextStyle(color: color, fontWeight: FontWeight.w400, fontSize: size),
+      style: TextStyle(color: color, fontWeight: FontWeight.w400, fontSize: size==0?Dimensions.font20:size),
     );
   }
 }

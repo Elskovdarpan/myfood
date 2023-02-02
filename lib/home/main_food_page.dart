@@ -16,6 +16,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
     return Scaffold(
       body: Column(
         children: [
+          //        SHOWING THE HEADER
           Container(
 
               child: Container(
@@ -52,6 +53,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ),
               )
           ),
+          //                                                    SHOWING THE BODY
           FoodPageBody(),
         ],
       ),
