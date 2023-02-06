@@ -3,6 +3,8 @@ import 'package:myfood/home/food_page_body.dart';
 import 'package:myfood/widgets/big_text.dart';
 import 'package:myfood/widgets/small_text.dart';
 
+import '../utils/dimensions.dart';
+
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
 
@@ -22,13 +24,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
               child: Container(
                 margin: EdgeInsets.only(top: 30, bottom: 15),
                 padding: EdgeInsets.only(left: 20, right: 20),
-                color: Colors.amber,
+                // color: Colors.amber,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
-                        BigText(text: "bangladesh"),
+                        BigText(text: "bangladesh", color: Colors.lightBlue[900]),
                         Row(
                           children: [
                             SmallText(text: "Kodambari"),
@@ -42,7 +44,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                         // color: Colors.green,
                         width: 45,
                         height: 45,
-                        child: Icon(Icons.search, color: Colors.white),
+                        child: Icon(Icons.search, color: Colors.white, size: Dimensions.iconSize24),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.blue,
@@ -54,7 +56,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
               )
           ),
           //                                                    SHOWING THE BODY
-          FoodPageBody(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
       ),
     );
